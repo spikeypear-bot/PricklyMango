@@ -1,7 +1,6 @@
-package main
+package internal
 
 import (
-	"log"
 	"os"
 
 	"go.yaml.in/yaml/v3"
@@ -60,13 +59,5 @@ func LoadYamlConfigs(filename string) (*ProxyConfig,error){
 }
 
 
-func main(){
-	proxyConfig,err:=LoadYamlConfigs("../.config/proxy-config.yaml")
-	if err!=nil{
-		log.Fatal(err)
-	}
-	log.Print(proxyConfig)
 
 
-
-}
