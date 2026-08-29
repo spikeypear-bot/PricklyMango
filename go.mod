@@ -1,6 +1,6 @@
 module github.com/spikeypear-bot/PricklyMango
 
-go 1.26.5
+go 1.27
 
 require (
 	github.com/joho/godotenv v1.5.1
