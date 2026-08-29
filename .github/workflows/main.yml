@@ -1,0 +1,17 @@
+name: Prickly-CD
+
+on:
+  push:
+    branches:
+      -main
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - id: id1
+      - name: Creating S3 artifacts
+      - run:
+        
+      
+      
