@@ -5,9 +5,10 @@ name: Go-CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" , "fix/cicd"]
   pull_request:
     branches: [ "main" ]
+
 
 jobs:
 
