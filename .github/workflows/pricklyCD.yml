@@ -26,11 +26,11 @@ jobs:
       - name: Creating Launch Template
         run: |
           aws sts get-caller-identity
-          NEW_VERSION= $(aws ec2 create-launch-template-version \
+          NEW_VERSION=$(aws ec2 create-launch-template-version \
           --launch-template-id lt-0a60e71b1851d8033 \
           --source-version $LATEST \
           --launch-template-data "{\"UserData\":\"$USER_DATA\"}" \
-          --query "LaunchTemplateVersions.VersionNumber"\
+          --query "LaunchTemplateVersion.VersionNumber" \
           --output text
           )
           aws ec2 modify-launch-template \
