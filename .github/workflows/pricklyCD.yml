@@ -28,7 +28,7 @@ jobs:
           aws sts get-caller-identity
           NEW_VERSION=$(aws ec2 create-launch-template-version \
           --launch-template-id lt-0a60e71b1851d8033 \
-          --source-version '$LATEST' \
+          --source-version '$Latest' \
           --launch-template-data "{\"UserData\":\"$USER_DATA\"}" \
           --query "LaunchTemplateVersion.VersionNumber" \
           --output text
