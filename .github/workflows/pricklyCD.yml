@@ -22,9 +22,10 @@ jobs:
       - name: Creating User Data
         run: |
           sed -i "s/__GITHUB_SHA__/$GITHUB_SHA/g" scripts/user-data.sh
-          USER_DATA=$(base64 -w 0 scripts/user-data.sh)
+          
       - name: Creating Launch Template
         run: |
+          USER_DATA=$(base64 -w 0 scripts/user-data.sh)
           aws sts get-caller-identity
           NEW_VERSION=$(aws ec2 create-launch-template-version \
           --launch-template-id lt-0a60e71b1851d8033 \
